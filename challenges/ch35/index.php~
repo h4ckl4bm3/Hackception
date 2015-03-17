@@ -3,21 +3,15 @@
 include_once dirname(__FILE__).'/../../init.php';
         session_start();
         require_once(HACKADEMIC_PATH."pages/challenge_monitor.php");
+	require_once(HACKADEMIC_PATH."connect.php");
         $monitor->update(CHALLENGE_INIT, $_GET);
 				$_SESSION['init'] = true;
 				
 if(isset($_GET['class_id']) && isset($_GET['id']) && isset($_GET['user_id']) && isset($_POST['submit']))
 {
 	$ans = $_POST['user-answer'];
-	if($ans == 'melvin guzman')
-	{
-		$connection = mysql_connect('localhost', 'root','Ravindar26');
-		if (!$connection)
-		{    die("Database Connection Failed" . mysql_error());	}	
-		$select_db = mysql_select_db('sudhack');
-		if (!$select_db)
-		{	die("Database Selection Failed" . mysql_error());	}
-		
+	if($ans == 'anonymous')
+	{	
 		$classid = $_GET['class_id'];
 		$id = $_GET['id'];
 		$userid = $_GET['user_id'];
@@ -50,7 +44,7 @@ a:hover   {color:#00ff00; background-color:transparent; text-decoration:none}
 <div align="center">
 <form action='' method='POST'>
 <p>
-Can you find who stole zoz's computer?
+Guy fawkes get back our game.!
 </p>
 <br><br>
 <input type="text" name='user-answer' placeholder='answer'/>
