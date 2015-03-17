@@ -3,6 +3,8 @@
 include_once dirname(__FILE__).'/../../init.php';
         session_start();
         require_once(HACKADEMIC_PATH."pages/challenge_monitor.php");
+	require_once(HACKADEMIC_PATH."connect.php");
+	require_once(HACKADEMIC_PATH."temp.php");
         $monitor->update(CHALLENGE_INIT, $_GET);
 				$_SESSION['init'] = true;
 				
@@ -11,12 +13,7 @@ if(isset($_GET['class_id']) && isset($_GET['id']) && isset($_GET['user_id']) && 
 	$ans = $_POST['user-answer'];
 	if($ans == 'user')
 	{
-		$connection = mysql_connect('localhost', 'root','amrita');
-		if (!$connection)
-		{    die("Database Connection Failed" . mysql_error());	}	
-		$select_db = mysql_select_db('hackanokha');
-		if (!$select_db)
-		{	die("Database Selection Failed" . mysql_error());	}
+		
 		
 		$classid = $_GET['class_id'];
 		$id = $_GET['id'];
