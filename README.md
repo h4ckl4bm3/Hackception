@@ -7,9 +7,3 @@ The installation Guide will help you during the installation process.
 
 The file hackanoka.sql will set up the database and tables required for 
 the CMS to run.
-
-Completing this would not have been possible without:
-  
-  @ravindar26
-  
-  @gameFace22
